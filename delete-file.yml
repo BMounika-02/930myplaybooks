@@ -1,0 +1,11 @@
+--- # deleting a file
+- hosts: webservers
+  become: yes
+
+
+  tasks:
+    - name: delete a file in webservers
+      file:
+       path: /home/ansible/file1
+       state: absent
+

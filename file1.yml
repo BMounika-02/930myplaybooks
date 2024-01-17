@@ -1,0 +1,22 @@
+---
+ - hosts: webservers
+   become: true
+
+   tasks:
+      - name: install httpd on webservers
+        yum:
+          name: httpd
+          state: latest
+         when: ansible_os_family == "RedHat"
+
+
+
+
+       - name: start httpd service
+         service:
+           name: httpd
+           state: started
+         when: ansible_os_family == "RedHat"
+
+
+

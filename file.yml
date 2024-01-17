@@ -1,0 +1,8 @@
+--- #this is first file in ansible
+- hosts: webservers
+  become: yes
+
+ tasks:
+   - file: started the httpd software
+     action: service name=httpd state=start
+

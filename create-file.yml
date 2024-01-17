@@ -1,0 +1,10 @@
+--- # creating a file
+- hosts: webservers
+  become: yes
+
+
+  tasks:
+    - name: create a file in webservers
+      file:
+       path: /home/ansible/demo2 
+       state: touch

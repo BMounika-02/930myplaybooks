@@ -1,0 +1,11 @@
+--- # creating a directory
+- hosts: webservers
+  become: yes
+
+
+  tasks:
+    - name: create a directory in webservers
+      file:
+       path: /home/ansible/mounidir
+       state: directory
+

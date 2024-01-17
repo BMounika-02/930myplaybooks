@@ -1,0 +1,16 @@
+--- # this is the test playbook
+- hosts: webservers
+  become: yes
+
+
+  tasks:
+    - name: install httpd in webservers
+      yum:
+        name: httpd
+        state: installed
+
+
+    - name: start httpd service
+      service:
+        name: httpd
+        state: started     

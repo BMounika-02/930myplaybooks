@@ -1,0 +1,10 @@
+--- # create user account
+- hosts: webservers
+  become: yes
+
+
+  tasks:
+    - name: create user in webservers
+      user:
+        name: pavan
+      ignore_errors: yes  

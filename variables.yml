@@ -1,0 +1,15 @@
+--- # creating user
+- hosts: webservers
+  become: yes
+
+  vars:
+    user: mouni
+
+
+  tasks:
+    - name: create a user {{user}}
+      user:
+        name: '{{user}}'
+
+
+            

@@ -1,0 +1,16 @@
+--- # this is conditional playbook
+- hosts: webservers
+  become: yes
+
+
+  tasks:
+    - name: installing appache for Debian
+      command: apt-get install apache2 -y
+      when: ansible_os_family == "Debian"
+
+
+    - name: installing https on RedHat 
+      yum:
+        name: httpd
+        state: installed
+      when: ansible_os_family == "RedHat"

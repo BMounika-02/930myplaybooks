@@ -1,0 +1,10 @@
+--- #installing onemore s/w
+- hosts: webservers
+  become: yes
+
+
+  tasks:
+    - name: install package
+      yum:
+        name: java
+        state: present  

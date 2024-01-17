@@ -1,0 +1,10 @@
+--- #this is demo file
+- hosts: webservers
+  become: yes
+  
+  tasks:
+    - name: Installing httpd in webservers
+      yum: name=httpd state=latest
+
+
+
